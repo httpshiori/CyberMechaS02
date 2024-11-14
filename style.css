@@ -1,0 +1,906 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header {
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 0px 0;
+    position: relative;
+    flex-wrap: nowrap; 
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+header .container {
+    font-family: "Audiowide", Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 10px 20px;
+    justify-content: center;
+    position: relative;
+
+    
+}
+
+header nav ul {
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    
+}
+
+header nav ul li {
+    margin: 20px;
+}
+
+nav ul img {
+    margin: 0 15px; /* espaço ao redor da imagem */
+}
+
+header nav ul li a {
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+header nav ul li a:hover {
+    text-decoration-color: rgb(255, 255, 255);
+}
+
+.language-btn {
+    font-family: "AudioWide";
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+.language-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.hero {
+    background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1.8) 100%), url('bg.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 200px 0;
+    text-align: center;
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+    position: relative; 
+}
+
+.hero::before {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    opacity: 0.5; 
+    z-index: -1; 
+}
+
+
+.hero h2, .hero p {
+    margin: 0; 
+    z-index: 1; 
+}
+
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-family: "Orbitron", sans-serif; 
+    opacity: 1.5;
+    color: #333;
+    text-shadow:
+    1px 1px 0 #ffffff,  
+    0px -1px 0 #ffffff, 
+    2px -1px 0 #000,  
+    0px 0px 0 #000;  
+}
+
+
+#boxcarousel {
+    display: flex;
+    max-width: 1350px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+   
+}
+
+.carousel {
+    position: relative;
+    width: 65%;
+    overflow: hidden;
+    left: 10%;
+    height: 0%;
+    
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+    display: block;
+    cursor: pointer;
+    
+}
+
+.carousel .thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+   
+}
+.thumbnail-wrapper {
+    display: flex;
+    overflow-x: auto;
+    cursor: grab; /* Mostra o ícone de mão aberta para indicar que pode ser arrastado */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+}
+
+.thumbnail-wrapper::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome */
+}
+
+.thumbnail-wrapper:active {
+    cursor: grabbing; /* Muda para a mão fechada durante o arraste */
+}
+.thumbnails::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+}
+
+.thumbnails {
+    display: flex;           /* Usa flexbox para as miniaturas */
+    justify-content: flex-start; /* Alinha as miniaturas à esquerda */
+    margin-top: 10px;       /* Espaçamento superior */
+    overflow-x: auto;       /* Permite rolagem horizontal se necessário */
+    scrollbar-width: none;  /* Esconde a barra de rolagem em navegadores suportados */
+}
+.carousel .thumbnails img {
+    width: 100px;
+    height: 120px;
+    cursor: pointer;
+    opacity: 0.6;
+    user-select: none;  
+}
+
+.carousel .thumbnails img:hover {
+    opacity: 1;
+}
+
+.product-details {
+    font-family: "Play", sans-serif;
+    width: 65%;
+    margin-left: 15%;
+    padding: 0% 0%;
+  
+
+}
+
+.product-details h1 {
+    font-family: "Audiowide";
+    margin-top: 3%;
+    font-size: 35px;
+    margin-bottom: 5%;
+    color: #333;
+    
+}
+
+.discount-label {
+    font-family: "audiowide";
+    display: inline-block;
+    background-color: rgb(206, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-details p {
+
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10%;
+}
+
+p.old-price {
+    color: #999;
+    text-decoration: line-through;
+    margin: 0;
+    font-size: 20px;
+}
+
+p.new-price {
+    color: #e44d26; 
+    margin: 0;
+font-size: 35px;
+margin-bottom: 15px;
+}
+
+.countdown {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0%;
+    margin-bottom: 35px;
+}
+
+.buy-btn {
+    font-family: "Audiowide", Arial, Helvetica, sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 25px 210px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 25px;
+ margin-left: 0%;
+}
+
+.buy-btn:hover {
+    background-color: #616161;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: #757575;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    transition: transform 0.3s ease;
+}
+
+.zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about {
+    position: relative; 
+    padding: 20px 0; 
+    background-color: #e9ecef;
+}
+
+
+.full-width-container {
+    width: 100vw; 
+    overflow-x: hidden; 
+    position: relative;
+    left: 50%; 
+    margin-left: -50vw; 
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-content h1 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 2em;
+    color: #333;
+    padding: 0%;
+    text-align: center;
+    margin-bottom: 0%;
+}
+
+.text-content p {
+    font-family: "Play", sans-serif;
+    font-size: 1.2em;
+    color: #666;
+    padding: 5%;
+   margin-bottom: 0%;
+   margin-left: 0%;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    width: 435px;
+    height: 490px;
+ 
+}
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 80px 0;
+    bottom: 0;
+}
+.footer-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-icons li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-icons a {
+    display: inline-block;
+}
+
+.footer-icons img {
+    width: 20px; 
+    height: auto;
+    vertical-align: middle;
+}
+
+.footer-icons a:hover img {
+    opacity: 0.8; 
+}
+
+footer p {
+    font-family:"Orbitron";
+    color: #fff;
+    font-size: 1rem;
+    padding: 1%;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .carousel-images {
+        scroll-snap-type: x mandatory;
+    }
+}
+
+@media (max-width: 768px) {
+    
+
+    header .container img {
+        max-width: 60%; /* Reduz a imagem para 60% em tablets */
+    }
+    footer .container {
+        flex-direction: column; /* Itens empilhados em telas pequenas */
+        text-align: center;
+    }
+    .about .container {
+        flex-direction: column; /* Alinha os itens em coluna */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .text-content {
+        padding-right: 0; /* Remove o espaçamento lateral */
+        padding-bottom: 20px; /* Adiciona espaço entre o texto e a imagem */
+    }
+
+    .hero h2 {
+        font-size: 28px; /* Tamanho reduzido para tablets */
+    }
+    .image-content img {
+        width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+        max-width: 350px; /* Limita o tamanho da imagem para caber melhor */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    #boxcarousel {
+        margin: 20px;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel .thumbnails img {
+        width: 80px;
+        height: 100px;
+    }
+
+    .product-details h1 {
+        font-size: 28px;
+    }
+
+    .product-details p {
+        font-size: 16px;
+    }
+
+    .buy-btn {
+        padding: 15px 80px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header .container img {
+        max-width: 80%; /* Reduz a imagem para 80% em telas menores */
+    }
+    .hero {
+        padding: 172px 43px;
+        min-height: 33vh;
+    }
+}
+
+@media (max-width: 600px) {
+    header .container img {
+        max-width: 50%; /* Reduz a imagem para 50% em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    
+    @media (max-width: 480px) {
+    
+        .language-btn {
+            padding: 6px 12px; /* Reduz ainda mais o padding em telas muito pequenas */
+            font-size: 12px;
+             /* Diminui o tamanho da fonte */
+        }
+
+        .carousel-images {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        
+        .carousel-images img {
+            max-width: 100%;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+        }
+
+        header nav ul {
+            flex-wrap: nowrap; 
+            display: flex; 
+            justify-content: flex-end;
+            align-items: center; 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; /* Remove o padding padrão do ul */
+        }
+        
+        header nav ul li {
+            margin: 0 10px; /* Diminui a margem entre os itens da lista */
+        }
+        
+        nav ul img {
+            margin: 0 10px; /* Diminui o espaço ao redor da imagem */
+        }
+        header nav ul {
+            flex-wrap: nowrap;
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            flex-direction: row-reverse;
+        }
+    }
+        header nav ul li a {
+            white-space: nowrap;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .hero {
+            padding: 172px 43px;
+            min-height: 45vh;
+            max-width: 100%;
+        }
+        .hero h2 {
+            font-size: 33px;
+        }
+        header .container img {
+            max-width: 40%; 
+            /* Reduz a imagem para 40% em celulares */
+        }
+        footer .container p {
+            font-size: 0.9rem; /* Tamanho menor do texto em celulares */
+        }
+        .carousel .thumbnails img {
+            width: 60px;
+            height: 80px;
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column; /* Assegura que o carrossel principal e os thumbnails estejam na mesma coluna */
+        }
+        .thumbnails {
+            display: flex;
+            margin-top: 10px; 
+            display: flex;
+            justify-content: flex-start; /* Garantir que as thumbnails fiquem alinhadas à esquerda inicialmente */
+            margin-right: 17%;
+        }
+    
+        #boxcarousel {
+            flex-direction: column;
+          
+        }
+ 
+        .modal-content {
+            width: 90%; /* Aumenta a largura da imagem para 90% da tela */
+            max-width: 370px;
+            margin-top: 150px;
+            transition: transform 0.3s ease; /* Limita o tamanho máximo da imagem a 300px para evitar que fique muito grande */
+        }
+    
+        .modal .close {
+            font-size: 40px; /* Diminui o tamanho do ícone de fechar */
+            top: 5px; /* Ajusta a posição do botão de fechar */
+            right: 10px;
+        }
+    
+    
+        .carousel-images img {
+            min-width: 100%; 
+            padding-right: 17%;    
+        }
+    
+        .product-details h1 {
+            font-size: 24px;
+            margin-top: 10%;
+        }
+    
+    
+        .next {
+            right: 70px;
+        }
+        .buy-btn {
+            padding: 10px 60px;
+            font-size: 16px;
+        }
+     
+        .text-content p {
+            font-size: 1em; /* Reduz o tamanho do parágrafo */
+            padding: 10px; /* Ajusta o padding para caber melhor em pequenas telas */
+        }
+    
+        .image-content img {
+            max-width: 200px; /* Ajuste adicional para telas muito pequenas */
+        }
+        p.old-price {
+            color: #999;
+            text-decoration: line-through;
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        p.new-price {
+            color: #e44d26; 
+            margin: 0;
+        font-size: 25px;
+        }
+
+        .discount-label {
+            font-family: "audiowide";
+            display: inline-block;
+            background-color: rgb(206, 0, 0);
+            color: white;
+            padding: 8px 18px;
+            font-size: 12px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        
+    
+    
+@media (max-width: 394px) {
+
+
+    header .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    header img {
+      width: 120px; /* Ajustar o tamanho do logo */
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 5px 0;
+    }
+  
+    .hero h2 {
+      font-size: 1.5em;
+      padding: 0 10px;
+    }
+  
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .prev, .next {
+      padding: 5px;
+      font-size: 18px;
+    }
+  
+    .thumbnails img {
+      width: 40px; /* Ajustar tamanho das miniaturas */
+      margin: 0 2px;
+    }
+  
+    .product-details h1 {
+      font-size: 1.2em;
+    }
+  
+    .product-details p {
+      font-size: 0.9em;
+      padding: 0 10px;
+    }
+  
+    .buy-btn {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  
+    .about {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .about .text-content, .about .image-content {
+      width: 100%;
+    }
+  
+    .about .text-content {
+      font-size: 0.9em;
+      padding: 0 10px;
+    }
+  
+    .about .image-content img {
+      width: 100%; /* Imagem ajusta-se à largura total */
+      height: auto;
+    }
+  
+    footer .container {
+      padding: 10px;
+    }
+  
+    .footer-icons img {
+      width: 25px;
+    }
+  
+    .footer-icons {
+      flex-direction: column;
+    }
+  
+    .footer-icons li {
+      margin: 5px 0;
+    }
+  
+  
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Alinha os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+       flex-direction: row;
+}
+    
+
+    nav ul li {
+        margin: 5px 0; /* Margem entre os itens */
+    }
+
+    
+    .hero {
+        padding: 20px 0; /* Ajusta o padding do hero */
+        max-width: 100%;
+    }
+
+    .product-details, .about {
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    .countdown p, .old-price, .new-price {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .thumbnails img {
+        width: 30px; /* Reduz a largura das miniaturas */
+    }
+
+    .image-content img {
+        max-width: 100%; /* Limita a largura máxima da imagem */
+    }
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 80px 0;
+    bottom: 0;
+}
+.footer-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-icons li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-icons a {
+    display: inline-block;
+}
+
+.footer-icons img {
+    width: 20px; 
+    height: auto;
+    vertical-align: middle;
+}
+
+.footer-icons a:hover img {
+    opacity: 0.8; 
+}
+
+footer p {
+    font-family:"Orbitron";
+    color: #fff;
+    font-size: 1rem;
+    padding: 1%;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+}
+
+
+.faq-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.faq-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.faq {
+    margin-bottom: 20px;
+}
+
+.faq .question {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.faq .answer {
+    margin: 0;
+    padding-left: 10px;
+    color: #555;
+}
+

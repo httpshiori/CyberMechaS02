@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <title>CyberMechaS02</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="icon.png" type="icon.png">
+
+</head>
+<body>
+
+<header>
+    <div class="container"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <img src="logo.png">
+                <li><a href="FAQ.html">F.A.Q</a></li>
+            </ul>
+        </nav>
+        <div class="language-dropdown">
+            <button class="language-btn" onclick="window.location.href='indexeng.html'">English</button>
+
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h2>Conheça o CyberMecha S02</h2>
+    </div>
+</section>
+<div id="boxcarousel" class="container">
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="foto1.png" alt="Imagem 1" onclick="openModal(this.src)">
+            <img src="foto2.png" alt="Imagem 2" onclick="openModal(this.src)">
+            <img src="foto3.png" alt="Imagem 3" onclick="openModal(this.src)">
+            <img src="foto4.png" alt="Imagem 4" onclick="openModal(this.src)">
+            <img src="foto5.png" alt="Imagem 5" onclick="openModal(this.src)">
+            <img src="foto6.png" alt="Imagem 6" onclick="openModal(this.src)">
+            <img src="foto7.jpeg" alt="Imagem 7" onclick="openModal(this.src)">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <div class="thumbnails">
+            <img src="foto1.png" >
+            <img src="foto2.png" >
+            <img src="foto3.png" >
+            <img src="foto4.png" >
+            <img src="foto5.png" >
+            <img src="foto6.png" >
+            <img src="foto7.jpeg">
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg" onclick="toggleZoom()">
+    </div>
+    
+    <div class="product-details">
+        <h1>CyberMecha S02</h1>
+        <div class="discount-label">40% OFF</div>
+        <p>Inspirado no universo futurista, o CyberMecha S02 é um headset feito com mais de 100 peças metálicas de robôs Gundam (grandes máquinas fictícias de obras japonesas). O projeto foi inspirado em diversos elementos e referências de estética cibernética. </p>
+        <p><strong>Aviso:</strong> Esse produto não é um Headset comum e não foi criado para o uso padrão, pois as peças de metal são muito sensíveis e podem quebrar facilmente.</p>
+                <p class="old-price">R$499.99</p>
+                <p class="new-price">R$299.99</p>
+                <div class="countdown">
+                   <p>Promoção válida até 31/11</p>
+                </div>                
+        <button class="buy-btn" onclick="window.location.href='https://instagram.com/httpshiori'">Comprar</button>
+    </div>
+</div>
+
+<section class="about">
+    <div class="container">
+        <div class="text-content">
+            <h1>Sobre o projeto</h1>
+            <p>O headset inicialmente era apenas uma pequena idéia que se concretizou através de peças metálicas importadas, peças de outras estruturas e muitas horas de montagem e pintura. O CMS02 contém mais de 100 peças metálicas e metade delas foram pintadas de prata. São duas tonalidades de prateada,  um tom é fosco e o outro é espelhado. Foi um longo processo esperar as peças chegarem, desprender cada peça usando um alicate, dobrando e encaixando partes. O que o CyberMecha S02 transmite, é que você pode ser o que quiser e alcançar seus sonhos, desde que você acredite que possa torná-los realidade.</p>
+        </div>
+        <div class="image-content">
+            <img src="about.png" alt="Descrição da imagem">
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Shiori. Todos os direitos reservados.</p>
+        <ul class="footer-icons">
+            <li><a href="https://www.instagram.com/httpshiori" target="_blank" title="Instagram"><img src="iconinsta.png" alt="Instagram"></a></li>
+            <li><a href="mailto:httpshiori19@gmail.com.com" title="Email"><img src="iconemail.png" alt="Email"></a></li>
+        </ul>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>CyberMechaS02</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="icon.png" type="icon.png">
+<script>
+    const carousel = document.querySelector('.carousel-images');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('active');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; // velocidade do deslize
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Para dispositivos móveis
+    let startTouchX;
+    carousel.addEventListener('touchstart', (e) => {
+        startTouchX = e.touches[0].pageX;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+        let moveTouchX = e.touches[0].pageX;
+        let walk = startTouchX - moveTouchX;
+        carousel.scrollLeft += walk;
+    });
+</script>
+
+
+</head>
+<body>
+<header>
+    <div class="container"> 
+        <nav>
+            <ul>
+                <li><a href="indexeng.html">Home</a></li>
+                <img src="logo.png">
+                <li><a href="FAQeng.html">F.A.Q</a></li>
+            </ul>
+        </nav>
+        <div class="language-dropdown">
+            <button class="language-btn" onclick="window.location.href='index.html'">Português</button>
+
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h2>Welcome to the CMS02 World!</h2>
+    </div>
+</section>
+<div id="boxcarousel" class="container">
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="foto1.png" alt="Imagem 1" onclick="openModal(this.src)">
+            <img src="foto2.png" alt="Imagem 2" onclick="openModal(this.src)">
+            <img src="foto3.png" alt="Imagem 3" onclick="openModal(this.src)">
+            <img src="foto4.png" alt="Imagem 4" onclick="openModal(this.src)">
+            <img src="foto5.png" alt="Imagem 5" onclick="openModal(this.src)">
+            <img src="foto6.png" alt="Imagem 6" onclick="openModal(this.src)">
+            <img src="foto7.jpeg" alt="Imagem 7" onclick="openModal(this.src)">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <div class="thumbnails">
+            <img src="foto1.png" >
+            <img src="foto2.png" >
+            <img src="foto3.png" >
+            <img src="foto4.png" >
+            <img src="foto5.png" >
+            <img src="foto6.png" >
+            <img src="foto7.jpeg">
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg" onclick="toggleZoom()">
+    </div>
+    
+    <div class="product-details">
+        <h1>CyberMecha S02</h1>
+        <div class="discount-label">10% OFF</div>
+        <p>Inspired by the futuristic universe, the CyberMecha S02 is a headset made with more than 100 metal parts from Gundam robots (large fictional machines from Japanese works). The project was inspired by several elements and references of cybernetic aesthetics.</p>
+        <p><strong>Warning:</strong>This product is not a common headset and was not created for standard use, as the metal parts are very sensitive and can break easily.</p>
+                <p class="old-price">U$99.99</p>
+                <p class="new-price">U$89.99</p>
+                <div class="countdown">
+                 <span> Few units available!</span>
+                </div>                
+        <button class="buy-btn" onclick="window.location.href='https://instagram.com/httpshiori'">Buy</button>
+    </div>
+</div>
+
+<section class="about">
+    <div class="container">
+        <div class="text-content">
+            <h1>About the Project</h1>
+            <p>The headset was initially just a small idea that came to fruition through imported metal parts, parts from other structures and many hours of assembly and painting. The CMS02 contains more than 100 metal parts and half of them were painted silver. There are two shades of silver, one shade is matte and the other is mirrored. It was a long process waiting for the pieces to arrive, detaching each piece using pliers, bending and fitting parts together. What CyberMecha S02 conveys is that you can be whatever you want and achieve your dreams, as long as you believe you can make them come true.</p>
+        </div>
+        <div class="image-content">
+            <img src="about.png" alt="Descrição da imagem">
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Shiori. All rights reserved.</p>
+        <ul class="footer-icons">
+            <li><a href="https://www.instagram.com/httpshiori" target="_blank" title="Instagram"><img src="iconinsta.png" alt="Instagram"></a></li>
+            <li><a href="mailto:httpshiori19@gmail.com.com" title="Email"><img src="iconemail.png" alt="Email"></a></li>
+        </ul>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
